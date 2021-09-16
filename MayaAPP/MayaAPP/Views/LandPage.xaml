@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MayaAPP.Views.LandPage"
+             xmlns:ViewModels ="clr-namespace:MayaAPP.ViewModels">
+
+    <!--<ContentPage.BindingContext>
+        <ViewModels:SuccessViewModel/>
+    </ContentPage.BindingContext>-->
+    
+    <ContentPage.Content>
+        
+            <Grid Background="#FF4484B9" HeightRequest="800">
+            <!--BACKGROUND-->
+            <Grid>
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF5BA7EB" Offset="0.148"/>
+                        <GradientStop Color="#FF5A509E" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+            </Grid>
+
+            <StackLayout>
+                <!--HEAD-->
+                
+                    <Grid>
+                        <StackLayout HeightRequest="280">
+                        <Frame Margin="90,30,0,-150" HeightRequest="130" WidthRequest="130" Padding="0" CornerRadius="100" Background="WHITE"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="StartAndExpand">
+                            <Image Source="Devillechicken.jpg" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Image>
+                            </Frame>
+                           <Frame  Margin="200,25,0,-50" HeightRequest="130" Padding="0" WidthRequest="130" CornerRadius="100" Background="WHITE "
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="StartAndExpand">
+                            <Image Source="Jollof.jpg" Aspect="Fill"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Image>
+                        </Frame>
+                            
+                           <Frame Margin="145,0,0,50" HeightRequest="130" Padding="0" WidthRequest="130" CornerRadius="100" Background="WHITE "
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="StartAndExpand">
+                            <Image Source="mk.jpg" Aspect="AspectFill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Image>
+                        </Frame>
+                            
+                        </StackLayout>
+
+                    </Grid>
+
+                    <Grid  HeightRequest="230" >
+
+                        <!--BODY-->
+                        <Label FontFamily="SF Beaverton Medium" FontSize="32"
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Top"
+                       Text="WELCOME" TextColor="White" Background="{x:Null}" Margin="6,-10,0,0" />
+                        
+                        <Label FontFamily="SF Beaverton Medium" FontSize="32" 
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Top"
+                       Text="to" Background="{x:Null}" TextColor="White" Margin="15,20,0,0" />
+                        <!--LOGO IMAGE-->
+                        <Image Margin="90,-27,80,13" Source="Mayalogo.png"/>
+
+                    </Grid>
+                    <Grid >
+                        <!--FOOTER-->
+                        <Label FontFamily="SF Beaverton Medium" FontSize="17"
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Top"
+                       Text="Tasty Treats For Everyone" Background="{x:Null}" 
+                       TextColor="#FF00F6FF" Margin="15,100,0,0"/>
+
+                    </Grid>
+                
+                     
+            </StackLayout>
+
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

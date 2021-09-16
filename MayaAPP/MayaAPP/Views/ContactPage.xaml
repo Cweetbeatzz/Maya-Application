@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MayaAPP.Views.ContactPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF5BA7EB" Offset="0.148"/>
+                        <GradientStop Color="#FF5A509E" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+            </Grid>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

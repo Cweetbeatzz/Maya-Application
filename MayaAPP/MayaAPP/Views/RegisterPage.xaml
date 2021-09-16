@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MayaAPP.Views.RegisterPage"
+             xmlns:ViewModels ="clr-namespace:MayaAPP.ViewModels"
+             xmlns:vm ="MayaAPP.ViewModels">
+
+   
+    
+    <ContentPage.BindingContext>
+        <ViewModels:RegisterViewModels/>
+    </ContentPage.BindingContext>
+
+   
+   
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" >
+
+            <Grid BackgroundColor="#39A0BC" HeightRequest="800" >
+
+                <Grid>
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF5BA7EB" Offset="0.148"/>
+                            <GradientStop Color="#FF5A509E" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                </Grid>
+                <!--HEAD-->
+
+                <Label Text="REGISTER" TextColor="White" HorizontalTextAlignment="Center"
+                   FontFamily="SF Beaverton Medium" FontSize="32" FontAttributes="Bold" Margin="0,20,0,0"/>
+                <!--FORM-->
+                
+                <StackLayout Orientation="Vertical" Margin="0,100,0,0">
+                    <Grid  HorizontalOptions="StartAndExpand">
+                        <!--<Label Text="SURNAME" TextColor="White" HorizontalTextAlignment="Center" 
+                   FontFamily="NevadaSerial-Light" FontSize="16" Margin="0,0,0,35"/>-->
+                        <Entry  Text="{Binding surname}" FontSize="15" Placeholder="SURNAME" PlaceholderColor="White" ></Entry>
+                        
+                    </Grid>
+                    <Grid Margin="0,10,0,0">
+                        <!--<Label  Text="FIRSTNAME" TextColor="White" HorizontalTextAlignment="Center"
+                   FontFamily="NevadaSerial-Light" FontSize="16" Margin="0,0,0,35" />-->
+                        <Entry Text="{Binding lastname}" FontSize="15" Placeholder="LASTNAME" PlaceholderColor="White"></Entry>
+                    </Grid>
+
+                    <Grid Margin="0,10,0,0" >
+                        <!--<Label Text="EMAIL" TextColor="White" HorizontalTextAlignment="Center" 
+                   FontFamily="NevadaSerial-Light" FontSize="16" Margin="0,0,0,35"/>-->
+                        <Entry Text="{Binding email}" FontSize="15" PlaceholderColor="White" Placeholder="EMAIL" Keyboard="Email"></Entry>
+                    </Grid>
+                    <Grid Margin="0,10,0,0" >
+                        <!--<Label Text="EMAIL" TextColor="White" HorizontalTextAlignment="Center" 
+                   FontFamily="NevadaSerial-Light" FontSize="16" Margin="0,0,0,35"/>-->
+                        <Entry Text="{Binding address}" FontSize="15" PlaceholderColor="White" Placeholder="ADDRESS"></Entry>
+                    </Grid>
+                    <Grid Margin="0,10,0,0">
+                        <!--<Label Text="PHONE NO" TextColor="White" HorizontalTextAlignment="Center"
+                   FontFamily="NevadaSerial-Light" FontSize="16" Margin="0,0,0,35" />-->
+                        <Entry Text="{Binding phoneno}" FontSize="15" PlaceholderColor="White" Placeholder="PHONE NO:" Keyboard="Telephone"></Entry>
+                    </Grid>
+                    <Grid Margin="0,10,0,0">
+                        <!--<Label Text="PASSWORD" TextColor="White" HorizontalTextAlignment="Center"
+                   FontFamily="NevadaSerial-Light" FontSize="16" Margin="0,0,0,35"/>-->
+                        <Entry Text="{Binding password}" IsPassword="True" FontSize="15" Placeholder="PASSWORD" 
+                               PlaceholderColor="White"></Entry>
+                    </Grid>
+                </StackLayout>
+                
+                <!--ACTIVITY INDICATOR-->
+                <ActivityIndicator x:Name="activity_indicator" IsRunning="{Binding Isbusy}" IsVisible="{Binding Isbusy}"
+                                   VerticalOptions="Center" HorizontalOptions="Center"
+                                   Color="White"/>
+
+
+                <!--ALREADY HAVE AN ACCOUNT-->
+                <StackLayout Orientation="Vertical"  Margin="10,440,0,0">
+                    <Grid WidthRequest="50" HeightRequest="40">
+                        <Button Text="Login" TextColor="#39A0BC"
+                            FontFamily="SegoeUI" FontSize="15" 
+                            BackgroundColor="#FFFFFF"
+                            CornerRadius="20"  WidthRequest="110"
+                            HorizontalOptions="Center" Command="{Binding Register_command}"/>  <!--CHNAGE THE REGISTER BINDING COMMAND TO LOGIN COMMAND--> 
+                    </Grid>
+                    <Grid WidthRequest="50" HeightRequest="50" >
+                        <Label Text="Already have an Account?" 
+                           TextColor="Black" HorizontalTextAlignment="Center"
+                           Margin="-45,0,0,0" VerticalTextAlignment="Center"
+                           FontFamily="SegoeUI" FontSize="15"></Label>
+                        <Label Text="Login" TextColor="White" 
+                            HorizontalOptions="Center"
+                            Margin="170,16,0,0"/>
+                    </Grid>
+                    <!--REGISTER LOGO ICONS-->
+                    <Grid  HeightRequest="50">
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout Margin="140,0,0,0" HorizontalOptions="StartAndExpand"
+                                     HeightRequest="50" WidthRequest="50"
+                                     VerticalOptions="StartAndExpand">
+                                <Image Source="twitter.png" Aspect="AspectFit" Margin="-20,5,0,0">
+                                    <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_twitter"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </StackLayout>
+                            <StackLayout Margin="-7,0,50,0" HorizontalOptions="CenterAndExpand" 
+                                     HeightRequest="50" WidthRequest="50"
+                                     VerticalOptions="CenterAndExpand">
+                                <Image Source="google.png" Aspect="AspectFit" Margin="-10,5,10,0">
+                                    <Image.GestureRecognizers>
+                                       <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_google">
+                                        
+                                    </TapGestureRecognizer>
+                                    </Image.GestureRecognizers></Image>
+                            </StackLayout>
+                            <StackLayout Margin="-57,0,300,0" HorizontalOptions="EndAndExpand" 
+                                     HeightRequest="50" WidthRequest="50"
+                                     VerticalOptions="EndAndExpand">
+                                <Image Source="facebook.png" Aspect="AspectFit" Margin="-10,6,10,0">
+                                    <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_facebook">
+                                        
+                                    </TapGestureRecognizer>
+                                    </Image.GestureRecognizers></Image>
+                            </StackLayout>
+                            <ImageButton>
+
+                            </ImageButton>
+                        </StackLayout>
+
+                    </Grid>
+                </StackLayout>
+                <Grid >
+                    <!--FOOTER-->
+                    <Label FontFamily="SF Beaverton Medium" FontSize="17"
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Top"
+                       Text="Tasty Treats For Everyone" Background="{x:Null}" 
+                       TextColor="#FF00F6FF" Margin="15,600,0,0"/>
+
+                </Grid>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

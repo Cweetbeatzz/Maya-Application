@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MayaAPP.Views.LoginPage"
+             xmlns:ViewModels ="clr-namespace:MayaAPP.ViewModels">
+    <ContentPage.BindingContext>
+        <ViewModels:LoginViewModels/>
+    </ContentPage.BindingContext>
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem:Text ="Register" clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" >
+            <Grid BackgroundColor="#39A0BC" HeightRequest="800" >
+
+                <Grid>
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF5BA7EB" Offset="0.148"/>
+                            <GradientStop Color="#FF5A509E" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                </Grid>
+
+
+                <Label Text="LOGIN" TextColor="White" HorizontalTextAlignment="Center"
+                   FontFamily="SF Beaverton Medium" FontSize="32" FontAttributes="Bold" Margin="0,40,0,0"/>
+                <!--FORM-->
+                <StackLayout Orientation="Vertical" Margin="0,185,0,0">
+
+                   
+                    <Grid Margin="0,20,0,0">
+                        <!--<Label Text="EMAIL" TextColor="White" HorizontalTextAlignment="Center" 
+                   FontFamily="NevadaSerial-Light" FontSize="16" Margin="0,0,0,60"/>-->
+                        <Entry Placeholder="EMAIL" PlaceholderColor="White" FontFamily="NevadaSerial-Light"
+                               VerticalTextAlignment="Center" 
+                               Text="{Binding email}" FontSize="16" TextChanged="Entry_email_TextChanged" TextColor="White"></Entry>
+                    </Grid>
+                    
+                    <Grid Margin="0,20,0,0">
+                        <!--<Label Text="PASSWORD" TextColor="White" HorizontalTextAlignment="Center"
+                   FontFamily="NevadaSerial-Light" FontSize="16" Margin="0,0,0,60"/>-->
+                        <Entry Placeholder="PASSWORD" PlaceholderColor="White"
+                               Text="{Binding password}" IsPassword="True" FontSize="16"
+                               FontFamily="NevadaSerial-Light" TextChanged="Entry_password_TextChanged_1" VerticalTextAlignment="Center"></Entry>
+                    </Grid>
+
+                </StackLayout>
+
+                <!--ALREADY HAVE AN ACCOUNT-->
+                <StackLayout Orientation="Vertical"  Margin="10,380,0,0">
+                    <Grid WidthRequest="50" HeightRequest="40">
+                        <Button Text="Login" TextColor="#39A0BC"
+                            FontFamily="SegoeUI" FontSize="17" 
+                            BackgroundColor="#FFFFFF"
+                            CornerRadius="20"  WidthRequest="110"
+                            HorizontalOptions="Center" Clicked="Button_Clicked" />
+                    </Grid>
+                    <Grid WidthRequest="50" HeightRequest="50" >
+                        <Label Text="Don't have an Account?" 
+                           TextColor="Black" HorizontalTextAlignment="Center"
+                           Margin="-45,0,0,0" VerticalTextAlignment="Center"
+                           FontFamily="SegoeUI" FontSize="14"></Label>
+                        <Label Text="Register" TextColor="White" 
+                            HorizontalOptions="Center"
+                            Margin="162,15,0,0" Background="{x:Null}"/>
+                        <!--<Label.GesturesRecognizers>
+                            <TapGestureRecognizers Tapped ="TapGesturesRecognizer_Tapped"/>
+                        </Label.GesturesRecognizers>-->
+                    </Grid>
+                    <!--REGISTER LOGO ICONS-->
+                    <Grid  HeightRequest="50">
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout Margin="130,0,0,0" HorizontalOptions="StartAndExpand"
+                                     HeightRequest="50" WidthRequest="50"
+                                     VerticalOptions="StartAndExpand">
+                                <Image Source="twitter.png" Aspect="AspectFit" Margin="0,5,0,0" ></Image>
+                                
+                            </StackLayout>
+                            <StackLayout Margin="-7,0,50,0" HorizontalOptions="CenterAndExpand" 
+                                     HeightRequest="50" WidthRequest="50"
+                                     VerticalOptions="CenterAndExpand">
+                                <Image Source="google.png" Aspect="AspectFit" Margin="0,5,0,0" ></Image>
+                            </StackLayout>
+                            <StackLayout Margin="-57,0,300,0" HorizontalOptions="EndAndExpand" 
+                                     HeightRequest="50" WidthRequest="50"
+                                     VerticalOptions="EndAndExpand">
+                                <Image Source="facebook.png" Aspect="AspectFit" Margin="0,5,0,0" ></Image>
+                            </StackLayout>
+                            <ImageButton>
+
+                            </ImageButton>
+                        </StackLayout>
+
+                    </Grid>
+                </StackLayout>
+                <Grid >
+                    <!--FOOTER-->
+                    <Label FontFamily="SF Beaverton Medium" FontSize="17"
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Top"
+                       Text="Tasty Treats For Everyone" Background="{x:Null}" 
+                       TextColor="#FF00F6FF" Margin="15,600,0,0"/>
+
+                </Grid>
+
+            </Grid>
+
+
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

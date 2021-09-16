@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MayaAPP.Views.LoadingPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Background="#FF4484B9" HeightRequest="800">
+                <!--BACKGROUND-->
+                <Grid>
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF5BA7EB" Offset="0.148"/>
+                            <GradientStop Color="#FF5A509E" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                </Grid>
+
+                <StackLayout>
+                    <!--HEAD-->
+
+                    <Grid>
+                        <StackLayout HeightRequest="280">
+                            
+                        </StackLayout>
+
+                    </Grid>
+
+                    <Grid  HeightRequest="230" >
+
+                        <!--BODY-->
+                        <Label FontSize="32"
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Top" FontFamily="NevadaSerial-Light"
+                       Text="Please wait..." TextColor="White" Background="{x:Null}" Margin="25,90,0,0" />
+
+                       
+                        <!--LOGO IMAGE-->
+                        <Image Margin="90,-177,80,13" Aspect="AspectFit" Source="loadingg.png" 
+                               WidthRequest="130" HeightRequest="50" HorizontalOptions="Center"/>
+
+                    </Grid>
+                    <Grid >
+                        <!--FOOTER-->
+                        <Label FontFamily="SF Beaverton Medium" FontSize="17"
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Top"
+                       Text="Tasty Treats For Everyone" Background="{x:Null}" 
+                       TextColor="#FF00F6FF" Margin="15,100,0,0"/>
+
+                    </Grid>
+
+
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

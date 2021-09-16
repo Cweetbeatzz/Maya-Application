@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:ViewModel="clr-namespace:MayaAPP.ViewModels"
+             x:Class="MayaAPP.Views.HomePage">
+
+    <ContentPage.BindingContext>
+        <ViewModel:HomeViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+      
+            <Grid BackgroundColor="#39A0BC" HeightRequest="800" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="80" />
+                    <RowDefinition Height="70"/>
+                    <RowDefinition />
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+
+                <Rectangle x:Name="Background" Grid.RowSpan="5">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF5BA7EB" Offset="0.1"/>
+                            <GradientStop Color="#FF5A509E" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <!--HEAD-->
+
+
+                <StackLayout Orientation="Vertical" Margin="0,0,0,0" Background="green" Grid.Row="0">
+
+
+
+                </StackLayout>
+
+                <!--MENU-->
+                <StackLayout Orientation="Vertical" Margin="0,0,0,0" Background="yellow" Grid.Row="1">
+
+
+
+                </StackLayout>
+
+
+                <!--FOOD LIST-->
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,0" Grid.Row="2"
+                         HorizontalOptions="StartAndExpand">
+
+                <CarouselView ItemsSource="{Binding f_type}"  PeekAreaInsets="50">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" WidthRequest="50"
+                                     Margin="0,0,0,0">
+                                <Label Text="{Binding type_of_meals}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" 
+                                     HorizontalTextAlignment="Center"
+                                     VerticalTextAlignment="Center" FontSize="18" FontFamily="NevadaSerial-Light" Margin="0,0,0,0" TextColor="White"></Label>
+                            </StackLayout>
+
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+
+
+            </StackLayout>
+                <!--FOOD DETAILS-->
+                <StackLayout Orientation="Vertical" Margin="0,0,0,0" Background="orange" Grid.Row="3">
+
+
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,0" Grid.Row="4">
+                    <Grid>
+                        <!--FOOTER-->
+                        <Label FontFamily="SF Beaverton Medium" FontSize="17"
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                       Text="Tasty Treats For Everyone" Background="{x:Null}" 
+                       TextColor="#FF00F6FF" Margin="115,-40,0,0" Grid.Row="4"/>
+
+                    </Grid>
+
+                </StackLayout>
+
+            </Grid>
+       
+    </ContentPage.Content>
+</ContentPage>

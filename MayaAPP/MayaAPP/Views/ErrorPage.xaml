@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MayaAPP.Views.ErrorPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Background="#FF4484B9">
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="33*"/>
+                    <RowDefinition Height="7*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.RowSpan="2">
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF5BA7EB" Offset="0.148"/>
+                            <GradientStop Color="#FF5A509E" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                </Grid>
+
+                <!--BLACKBOX-->
+                <Rectangle x:Name="Backgroundsuccess" WidthRequest="150" HeightRequest="450" RadiusX="30" RadiusY="30"
+                       Margin="75,155,75,45" Opacity="0.5" >
+                    <Rectangle.Fill>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF3D3E3E" Offset="0.148"/>
+                            <GradientStop Color="Black" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <!--ERROR ICON-->
+                <Label x:Name="sucesslabel" TextColor="White" FontFamily="News701 BT" Text="ERROR" HorizontalOptions="Center"
+                   Margin="0,280,0,0" VerticalTextAlignment="Top" Background="{x:Null}" 
+                   HorizontalTextAlignment="Center" FontSize="20"/>
+                <!--IMAGE-->
+                <Image HorizontalOptions="Center" Source="erroricon.png" Margin="0,150,0,0"  />
+                <!--FOOTER TEXT-->
+                <Label x:Name="treats_logo" FontFamily="SF Beaverton Medium" FontSize="17" 
+                   HorizontalOptions="Center" Text="Tasty Treats For Everyone" Background="{x:Null}" 
+                   Margin="0,26,0,0" TextColor="#FF00F6FF" HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center" Grid.Row="1" />
+                <!--<Image x:Name="maya_logo" Margin="78,70,78,0" Source="Mayalogo.png" Opacity="0.3"/>-->
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

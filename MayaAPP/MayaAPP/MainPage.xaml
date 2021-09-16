@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MayaAPP.MainPage" 
+             xmlns:ViewModel="clr-namespace:MayaAPP.ViewModels">
+
+    <ContentPage.BindingContext>
+        <ViewModel:HomeViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid>
+             <Grid>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF5BA7EB" Offset="0.148"/>
+                    <GradientStop Color="#FF5A509E" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+
+        <StackLayout Margin="0,90,0,0">
+            <TableView>
+                <TableRoot>
+                    <TableSection>
+                        <EntryCell  Label="" Placeholder="SURNAME" Keyboard="Text" />
+                        <EntryCell  Label="" Placeholder="LASTNAME" Keyboard="Text" />
+                        <EntryCell  Label="" Placeholder="EMAIL" Keyboard="Email" />
+                        <EntryCell  Label="" Placeholder="PHONE NO:" Keyboard="Numeric" />
+                        <EntryCell  Label="" Placeholder="ADDRESS" Keyboard="Default" />
+                        <EntryCell  Label="" Placeholder="PASSWORD" Keyboard="Default" />
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+        </Grid>
+       
+
+    </ContentPage.Content>
+
+
+
+
+</ContentPage>
